@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 NewsPulse v5.0
+### The Ultimate AI-Powered Market Intelligence Dashboard
 
-## Getting Started
+![NewsPulse Banner](https://picsum.photos/seed/newspulse/1000/300)
 
-First, run the development server:
+**NewsPulse** is an enterprise-grade, modern news aggregation platform and financial dashboard. It bypasses restrictive third-party APIs by dynamically parsing global RSS feeds directly from top publishers (BBC, TechCrunch, Reuters, WSJ) and pushing the text snippets through Meta's `LLaMA 3.3 70B` via the ultra-fast Groq LPU engine.
 
+This provides instant, zero-delay market sentiment analysis, trending themes extraction, and concept mapping.
+
+<br/>
+
+## ✨ Key Features (v5.0 Update)
+
+- 📈 **Real-Time Market Ticker:** Fetches live cryptocurrency and stock indices (via CoinGecko) and displays them natively in the dashboard.
+- 🍱 **Modern Bento Grid Architecture:** Responsive, asymmetrical UI layout built with Tailwind CSS v4 featuring glassmorphism and extreme information density.
+- 🧠 **Groq LPU Inference Engine:** Processes batches of 20+ headlines in ~800ms, scoring sentiment (Bullish vs. Bearish) and extracting market entities.
+- 🗺️ **Concept Mapping:** Visualizes relationships between companies, politicians, and economic events using `@xyflow/react` (React Flow).
+- 🎙️ **Natural Voice TTS:** Utilizing native Web Speech API with advanced OS Voice mapping (Microsoft Natural / Siri Samantha) to read the daily market briefs out loud.
+- 📱 **Mobile Optimized:** A flawless layout that responds beautifully from 4k ultrawide monitors down to mobile screens.
+
+<br/>
+
+## 🛠️ Tech Stack & Architecture
+
+| Layer | Technology |
+| --- | --- |
+| **Frontend Framework** | Next.js 15 (App Router) |
+| **PaaS / Hosting** | Vercel |
+| **UI System** | React, Tailwind CSS v4, Lucide Icons |
+| **Data Aggregation** | `rss-parser` (Direct XML fetching) |
+| **Market Data** | CoinGecko Free API |
+| **AI Processing** | Groq (`llama-3.3-70b-versatile`) |
+| **Data Visualization** | React Flow (`@xyflow/react`) |
+
+<br/>
+
+## 🚀 Getting Started
+
+### 1. Requirements
+- Node.js `18.17+`
+- A free **Groq API Key** (Get one at [console.groq.com](https://console.groq.com))
+
+### 2. Installation
+Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/mohasbks/newspulse-ai-dashboard.git
+cd newspulse
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Environment Variables
+Create a `.env.local` file in the root directory:
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Run the Dev Server
+```bash
+npm run dev
+```
+Open `http://localhost:3000` to see the live portal.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<br/>
 
-## Learn More
+## 🛡️ Privacy & Rate Limits
+- **No Third-Party Rate Limits:** Because we fetch standard RSS XML feeds natively over HTTP, there are no "100 requests per day" limits like GNews or NewsAPI.
+- **Groq Tiers:** The free tier of Groq limits requests to ~30 RPM. You can upgrade or switch the model to `llama3-8b` if you hit limits.
 
-To learn more about Next.js, take a look at the following resources:
+<br/>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+**Designed & Developed by [mohasbks](https://github.com/mohasbks)**  
+*NewsPulse Inc. © 2026*

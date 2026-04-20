@@ -28,10 +28,10 @@ export default async function CategoryPage({ params }: Props) {
       <div className="max-w-5xl w-full mt-10 mb-20">
         
         <header className="mb-12 border-b border-border pb-6">
-          <h1 className="text-4xl md:text-5xl font-black text-tx tracking-tighter mb-4 capitalize">
+          <h1 className="text-3xl md:text-5xl font-black text-tx tracking-tighter mb-4 capitalize">
             {categoryName}
           </h1>
-          <p className="text-tx-muted font-medium text-lg">
+          <p className="text-tx-muted font-medium text-base md:text-lg">
             Latest updates and real-time RSS feeds for {categoryName.toLowerCase()}.
           </p>
         </header>
